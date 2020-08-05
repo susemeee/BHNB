@@ -36,9 +36,9 @@ const windowSizeMonitor = () => {
         setTimeout(() => {
             innerWidth = window.innerWidth;
             innerHeight = window.innerHeight;
-            
+
             update();
-            
+
             timerFlag = false;
             console.log(`[Plugin::followSizeChange] Finished routine.`)
         }, 50);
@@ -58,4 +58,3 @@ const followSizeChange = () => {
 
 
 
- 

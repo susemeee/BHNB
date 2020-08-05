@@ -7,7 +7,7 @@ Example of a star object is:
     "dec": "0.000000",
     "proper": "Sol",
     "mag": "-26.700"
-}   
+}
 */
 
 // Where to load json file.
@@ -21,7 +21,7 @@ const init = async (path=PATH) => {
     return response.json();
 };
 
-// load : star* -> <star>* 
+// load : star* -> <star>*
 const load = (stars) => {
     stars.map((star) =>{
         const elem = document.createElement('star');
