@@ -18,7 +18,7 @@ const setRandomMap = async (star) => {
     star.style.left = `${innerWidth * Math.random()}px`;
     star.style.top = `${innerHeight * Math.random()}px`;
     star.style.height = star.style.width = `${Math.random() * 3}px`;
-    
+
     return;
 };
 
@@ -67,15 +67,14 @@ const setGroundMap = async (star, fov="N") => {
     const W = innerWidth / 2;
     const H = innerHeight;
     const scale = Math.sqrt(W*W + H*H);
-    
+
     // Filter out half sphere
     if ((start <= az && az <= end)) {
         star.style.height = star.style.width = `0px`;
         return;
     }
 
-    star.style.left = `${W - Y * scale}px`;
-    star.style.top = `${H - Z * scale}px`;
+    star.style.transform = `translate(${W - Y * scale}px, ${H - Z * scale}px)`;
     star.style.height = star.style.width = `${brightness(mag)}px`;
 
     return;
@@ -100,5 +99,5 @@ const project = async (mode) => {
                 throw new Exception("INVALID_PROJ_MODE");
         }
     }
-    
+
 };
